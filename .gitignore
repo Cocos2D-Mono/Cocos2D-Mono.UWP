@@ -1,0 +1,36 @@
+# Standard VS / .NET ignores
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Rr]elease/
+[Dd]ebug/
+x64/
+x86/
+ARM/
+ARM64/
+bld/
+.vs/
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+project.lock.json
+project.fragment.lock.json
+
+# Build artifacts (when packing locally)
+/artifacts/
+
+# OS junk
+Thumbs.db
+.DS_Store
+
+# Local audit / scratch
+/.audit*

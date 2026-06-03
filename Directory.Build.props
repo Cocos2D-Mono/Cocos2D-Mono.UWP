@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Shared MSBuild properties for the cocos2d-mono-uwp build.
+  Pinned versions live here so a future MonoGame / SharpDX bump is a single-file edit.
+-->
+<Project>
+  <PropertyGroup>
+    <!-- Pinned dependency versions (referenced from src/*.csproj). -->
+    <MonoGameUwpVersion>3.8.2.1105</MonoGameUwpVersion>
+    <NetCoreUwpVersion>6.2.11</NetCoreUwpVersion>
+    <SharpDXMathVersion>4.0.1</SharpDXMathVersion>
+    <SharpZipLibVersion>1.3.3</SharpZipLibVersion>
+
+    <!-- Package version line continues from 2.4.8.3 (last release before the repo split). -->
+    <Cocos2DMonoUwpVersion>2.4.8.4</Cocos2DMonoUwpVersion>
+  </PropertyGroup>
+</Project>

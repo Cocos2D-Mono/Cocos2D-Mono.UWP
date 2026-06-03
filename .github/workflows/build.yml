@@ -1,0 +1,82 @@
+name: build
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: ${{ matrix.configuration }} ${{ matrix.platform }}
+    runs-on: windows-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        configuration: [Debug, Release]
+        platform: [x64, ARM]
+        # AnyCPU is also valid; x64 + ARM cover the Xbox UWP / Windows-on-ARM
+        # surface that consumers actually care about.
+
+    steps:
+      - name: Checkout (with submodule)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: Add MSBuild to PATH
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v2
+
+      - name: Restore
+        run: nuget restore Cocos2D-Mono.Uwp.sln
+
+      - name: Build
+        run: msbuild Cocos2D-Mono.Uwp.sln /m /v:minimal /p:Configuration=${{ matrix.configuration }} /p:Platform=${{ matrix.platform }} /p:AppxBundle=Never
+
+      - name: Upload build artifacts
+        if: matrix.configuration == 'Release'
+        uses: actions/upload-artifact@v4
+        with:
+          name: cocos2d-mono-uwp-${{ matrix.platform }}-${{ matrix.configuration }}
+          path: |
+            src/Cocos2D.Uwp/bin/Uwp/${{ matrix.platform }}/${{ matrix.configuration }}/**
+            src/Box2D.Uwp/bin/Uwp/${{ matrix.platform }}/${{ matrix.configuration }}/**
+
+  pack:
+    name: Pack NuGet
+    needs: build
+    runs-on: windows-latest
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/v'))
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: microsoft/setup-msbuild@v2
+      - uses: NuGet/setup-nuget@v2
+
+      - name: Restore
+        run: nuget restore Cocos2D-Mono.Uwp.sln
+
+      - name: Build Release x64
+        run: msbuild Cocos2D-Mono.Uwp.sln /m /v:minimal /p:Configuration=Release /p:Platform=x64 /p:AppxBundle=Never
+
+      - name: Pack
+        run: |
+          if (!(Test-Path artifacts)) { New-Item -ItemType Directory artifacts }
+          nuget pack nuget\Cocos2D-Mono.Uwp.nuspec       -OutputDirectory artifacts
+          nuget pack nuget\Cocos2D-Mono.Box2D.Uwp.nuspec -OutputDirectory artifacts
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nuget-packages
+          path: artifacts/*.nupkg

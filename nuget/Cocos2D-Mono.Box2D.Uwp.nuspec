@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>Cocos2D-Mono.Box2D.Uwp</id>
+    <version>2.4.8.4</version>
+    <title>Box2D for cocos2d-mono UWP</title>
+    <authors>Cocos2D-Mono Team, Broken Walls Studios</authors>
+    <owners>Cocos2D-Mono Team, Broken Walls Studios</owners>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/Cocos2D-Mono/cocos2d-mono-uwp</projectUrl>
+    <iconUrl>https://pbs.twimg.com/profile_images/1112234186457473024/G7S7ARjA_400x400.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Box2D physics engine (managed C# port) for Cocos2D-Mono.Uwp.</description>
+    <repository url="https://github.com/Cocos2D-Mono/cocos2d-mono-uwp" type="git" />
+    <releaseNotes>
+- New companion package to Cocos2D-Mono.Uwp 2.4.8.4.
+- Source pinned to mainline commit c30f5ec3 via git submodule.
+    </releaseNotes>
+    <copyright>Copyright © 2026 Cocos2D-Mono Team; Broken Walls Studios, LLC.</copyright>
+    <tags>mono monogame cocos2d game uwp xbox windows-universal physics box2d</tags>
+    <dependencies>
+      <dependency id="Microsoft.NETCore.UniversalWindowsPlatform" version="6.2.11" />
+      <dependency id="MonoGame.Framework.WindowsUniversal" version="3.8.2.1105" />
+      <dependency id="MonoGame.Content.Builder.Task" version="3.8.2.1105" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\src\Box2D.Uwp\bin\Uwp\Release\*.dll" target="lib\netcore" />
+    <file src="..\src\Box2D.Uwp\bin\Uwp\Release\*.pri" target="lib\netcore" />
+  </files>
+</package>
