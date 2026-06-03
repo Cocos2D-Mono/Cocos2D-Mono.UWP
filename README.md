@@ -62,7 +62,7 @@ Cocos2D-Mono.UWP/
 ├── nuget/
 │   ├── Cocos2D-Mono.Uwp.nuspec
 │   └── Cocos2D-Mono.Box2D.Uwp.nuspec
-└── .github/workflows/build.yml         (windows-latest, msbuild)
+└── .github/workflows/build.yml         (windows-2022, msbuild)
 ```
 
 > **NuGet package IDs vs repository name:** the repository is named `Cocos2D-Mono.UWP` (all-caps UWP) to match the project family casing on GitHub, but the published NuGet packages remain `Cocos2D-Mono.Uwp` and `Cocos2D-Mono.Box2D.Uwp` (mixed-case `Uwp`) to preserve continuity with the existing NuGet version line.

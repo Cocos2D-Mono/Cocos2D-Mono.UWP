@@ -183,16 +183,18 @@
        Package references — pinned to last UWP-supporting versions
        ============================================================ -->
   <ItemGroup>
+    <!-- Versions resolve from $(...) properties in Directory.Build.props so
+         a future MonoGame bump is a single-file edit. -->
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>6.2.11</Version>
+      <Version>$(NetCoreUwpVersion)</Version>
     </PackageReference>
-    <PackageReference Include="MonoGame.Framework.WindowsUniversal" Version="3.8.1.303" />
-    <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.1.303" />
+    <PackageReference Include="MonoGame.Framework.WindowsUniversal" Version="$(MonoGameUwpVersion)" />
+    <PackageReference Include="MonoGame.Content.Builder.Task" Version="$(MonoGameUwpVersion)" />
     <PackageReference Include="SharpDX.Mathematics">
-      <Version>4.0.1</Version>
+      <Version>$(SharpDXMathVersion)</Version>
     </PackageReference>
     <PackageReference Include="SharpZipLib">
-      <Version>1.3.3</Version>
+      <Version>$(SharpZipLibVersion)</Version>
     </PackageReference>
   </ItemGroup>
 
@@ -200,6 +202,11 @@
     <ProjectReference Include="..\Box2D.Uwp\Box2D.Uwp.csproj">
       <Project>{ACAC14A0-8C2B-413C-875F-A2AD3C647800}</Project>
       <Name>Box2D.Uwp</Name>
+      <!-- Don't copy Box2D.dll into Cocos2D.Uwp's bin\Uwp\Release\.
+           The nuspec packs *.dll and the Cocos2D-Mono.Box2D.Uwp package is
+           already a declared dependency — without this, consumers would
+           restore a duplicate Box2D.dll. -->
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
 

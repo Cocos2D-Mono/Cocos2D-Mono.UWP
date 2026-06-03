@@ -142,11 +142,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!-- Versions resolve from $(...) properties in Directory.Build.props. -->
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>6.2.11</Version>
+      <Version>$(NetCoreUwpVersion)</Version>
     </PackageReference>
-    <PackageReference Include="MonoGame.Framework.WindowsUniversal" Version="3.8.1.303" />
-    <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.1.303" />
+    <PackageReference Include="MonoGame.Framework.WindowsUniversal" Version="$(MonoGameUwpVersion)" />
+    <PackageReference Include="MonoGame.Content.Builder.Task" Version="$(MonoGameUwpVersion)" />
   </ItemGroup>
 
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
