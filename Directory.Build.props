@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Shared MSBuild properties for the cocos2d-mono-uwp build.
+  Shared MSBuild properties for the Cocos2D-Mono.UWP build.
   Pinned versions live here so a future MonoGame / SharpDX bump is a single-file edit.
 -->
 <Project>

@@ -7,11 +7,11 @@
     <authors>Cocos2D-Mono Team, Broken Walls Studios</authors>
     <owners>Cocos2D-Mono Team, Broken Walls Studios</owners>
     <license type="expression">MIT</license>
-    <projectUrl>https://github.com/Cocos2D-Mono/cocos2d-mono-uwp</projectUrl>
+    <projectUrl>https://github.com/Cocos2D-Mono/Cocos2D-Mono.UWP</projectUrl>
     <iconUrl>https://pbs.twimg.com/profile_images/1112234186457473024/G7S7ARjA_400x400.png</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Box2D physics engine (managed C# port) for Cocos2D-Mono.Uwp.</description>
-    <repository url="https://github.com/Cocos2D-Mono/cocos2d-mono-uwp" type="git" />
+    <repository url="https://github.com/Cocos2D-Mono/Cocos2D-Mono.UWP" type="git" />
     <releaseNotes>
 - New companion package to Cocos2D-Mono.Uwp 2.4.8.4.
 - Source pinned to mainline commit c30f5ec3 via git submodule.

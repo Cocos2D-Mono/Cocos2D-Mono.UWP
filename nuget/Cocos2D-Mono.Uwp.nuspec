@@ -7,13 +7,13 @@
     <authors>Cocos2D-Mono Team, Broken Walls Studios</authors>
     <owners>Cocos2D-Mono Team, Broken Walls Studios</owners>
     <license type="expression">MIT</license>
-    <projectUrl>https://github.com/Cocos2D-Mono/cocos2d-mono-uwp</projectUrl>
+    <projectUrl>https://github.com/Cocos2D-Mono/Cocos2D-Mono.UWP</projectUrl>
     <iconUrl>https://pbs.twimg.com/profile_images/1112234186457473024/G7S7ARjA_400x400.png</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <description>Cocos2D-Mono for UWP (Windows Universal Platform / Xbox UWP). Maintained from the cocos2d-mono-uwp repository; cocos2d-mono source is pinned via git submodule.</description>
-    <repository url="https://github.com/Cocos2D-Mono/cocos2d-mono-uwp" type="git" />
+    <description>Cocos2D-Mono for UWP (Windows Universal Platform / Xbox UWP). Maintained from the Cocos2D-Mono.UWP repository; cocos2d-mono source is pinned via git submodule.</description>
+    <repository url="https://github.com/Cocos2D-Mono/Cocos2D-Mono.UWP" type="git" />
     <releaseNotes>
-- Cocos2D-Mono.Uwp moved to its own repository (cocos2d-mono-uwp).
+- Cocos2D-Mono.Uwp moved to its own repository (Cocos2D-Mono.UWP).
 - cocos2d-mono source is consumed via a pinned git submodule (mainline commit c30f5ec3 — the last commit with full #if NETFX_CORE source intact).
 - MonoGame.Framework.WindowsUniversal pinned to 3.8.2.1105 (final UWP release).
 - Continues the version line from 2.4.8.3 (Jan 14, 2025).

@@ -8,14 +8,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) 
 
 ### Added
 
-- New repository home: `Cocos2D-Mono/cocos2d-mono-uwp`. Source previously lived in `Cocos2D-Mono/cocos2d-mono` under `cocos2d/cocos2d.Uwp/` and `box2d/box2d.Uwp/`; those folders were removed from mainline in [`ea6a2d76`](https://github.com/Cocos2D-Mono/cocos2d-mono/commit/ea6a2d76) on 2024-12-01.
+- New repository home: [`Cocos2D-Mono/Cocos2D-Mono.UWP`](https://github.com/Cocos2D-Mono/Cocos2D-Mono.UWP). Source previously lived in `Cocos2D-Mono/cocos2d-mono` under `cocos2d/cocos2d.Uwp/` and `box2d/box2d.Uwp/`; those folders were removed from mainline in [`ea6a2d76`](https://github.com/Cocos2D-Mono/cocos2d-mono/commit/ea6a2d76) on 2024-12-01.
 - `cocos2d-mono` source is now consumed via a git submodule pinned to commit `c30f5ec3` (parent of the removal commit). This is the last commit in mainline with the full `#if NETFX_CORE` source set intact.
 - New companion package `Cocos2D-Mono.Box2D.Uwp` 2.4.8.4. Previously the Box2D code shipped inside `Cocos2D-Mono.Uwp` as a project reference; this release splits it for cleaner consumer dependency graphs.
 
 ### Changed
 
 - Bumped to version `2.4.8.4` (continuation of the pre-split line).
-- `<projectUrl>` and `<repository>` in nuspecs point to `Cocos2D-Mono/cocos2d-mono-uwp`.
+- `<projectUrl>` and `<repository>` in nuspecs point to `Cocos2D-Mono/Cocos2D-Mono.UWP`.
 
 ### Pinned
 

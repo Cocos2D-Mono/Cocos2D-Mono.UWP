@@ -47,7 +47,7 @@ jobs:
         if: matrix.configuration == 'Release'
         uses: actions/upload-artifact@v4
         with:
-          name: cocos2d-mono-uwp-${{ matrix.platform }}-${{ matrix.configuration }}
+          name: Cocos2D-Mono.UWP-${{ matrix.platform }}-${{ matrix.configuration }}
           path: |
             src/Cocos2D.Uwp/bin/Uwp/${{ matrix.platform }}/${{ matrix.configuration }}/**
             src/Box2D.Uwp/bin/Uwp/${{ matrix.platform }}/${{ matrix.configuration }}/**

@@ -1,4 +1,4 @@
-# cocos2d-mono-uwp
+# Cocos2D-Mono.UWP
 
 UWP / Xbox UWP support for [cocos2d-mono](https://github.com/Cocos2D-Mono/cocos2d-mono), maintained as a separate repository so the mainline can modernize without dragging UWP-era APIs along.
 
@@ -24,8 +24,8 @@ UWP class libraries require Visual Studio 2022 (any edition) with the **Universa
 
 ```powershell
 # Clone with the cocos2d-mono submodule
-git clone --recurse-submodules https://github.com/Cocos2D-Mono/cocos2d-mono-uwp.git
-cd cocos2d-mono-uwp
+git clone --recurse-submodules https://github.com/Cocos2D-Mono/Cocos2D-Mono.UWP.git
+cd Cocos2D-Mono.UWP
 
 # If you already cloned without --recurse-submodules:
 git submodule update --init --recursive
@@ -47,7 +47,7 @@ nuget pack nuget\Cocos2D-Mono.Box2D.Uwp.nuspec -OutputDirectory artifacts
 ## Repository layout
 
 ```
-cocos2d-mono-uwp/
+Cocos2D-Mono.UWP/
 ├── Directory.Build.props               (pinned dependency versions)
 ├── Cocos2D-Mono.Uwp.sln                (Cocos2D.Uwp + Box2D.Uwp)
 ├── external/
@@ -64,6 +64,8 @@ cocos2d-mono-uwp/
 │   └── Cocos2D-Mono.Box2D.Uwp.nuspec
 └── .github/workflows/build.yml         (windows-latest, msbuild)
 ```
+
+> **NuGet package IDs vs repository name:** the repository is named `Cocos2D-Mono.UWP` (all-caps UWP) to match the project family casing on GitHub, but the published NuGet packages remain `Cocos2D-Mono.Uwp` and `Cocos2D-Mono.Box2D.Uwp` (mixed-case `Uwp`) to preserve continuity with the existing NuGet version line.
 
 The csprojs use pre-SDK MSBuild format because UWP class libraries require `TargetPlatformIdentifier=UAP`, which the modern SDK-style csproj format does not support cleanly.
 
