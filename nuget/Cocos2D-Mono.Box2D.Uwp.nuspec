@@ -26,6 +26,5 @@
   </metadata>
   <files>
     <file src="..\src\Box2D.Uwp\bin\Uwp\Release\*.dll" target="lib\netcore" />
-    <file src="..\src\Box2D.Uwp\bin\Uwp\Release\*.pri" target="lib\netcore" />
   </files>
 </package>

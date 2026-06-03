@@ -31,7 +31,5 @@
   </metadata>
   <files>
     <file src="..\src\Cocos2D.Uwp\bin\Uwp\Release\*.dll" target="lib\netcore" />
-    <file src="..\src\Cocos2D.Uwp\bin\Uwp\Release\*.pri" target="lib\netcore" />
-    <file src="..\src\Cocos2D.Uwp\bin\Uwp\Release\Cocos2D\**" target="lib\netcore\Cocos2D" />
   </files>
 </package>

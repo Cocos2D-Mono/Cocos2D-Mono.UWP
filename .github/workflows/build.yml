@@ -75,8 +75,11 @@ jobs:
       - name: Restore
         run: nuget restore Cocos2D-Mono.Uwp.sln
 
-      - name: Build Release x64
-        run: msbuild Cocos2D-Mono.Uwp.sln /m /v:minimal /p:Configuration=Release /p:Platform=x64 /p:AppxBundle=Never
+      # Build AnyCPU so the IL .dll lands at bin\Uwp\Release\ — which is the
+      # path the nuspec packs from. Consumers do per-arch .NET Native compile
+      # downstream; the package itself is platform-neutral managed code.
+      - name: Build Release AnyCPU
+        run: msbuild Cocos2D-Mono.Uwp.sln /m /v:minimal /p:Configuration=Release /p:Platform=AnyCPU /p:AppxBundle=Never
 
       - name: Pack
         run: |
