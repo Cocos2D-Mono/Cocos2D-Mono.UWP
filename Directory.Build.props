@@ -6,7 +6,7 @@
 <Project>
   <PropertyGroup>
     <!-- Pinned dependency versions (referenced from src/*.csproj). -->
-    <MonoGameUwpVersion>3.8.2.1105</MonoGameUwpVersion>
+    <MonoGameUwpVersion>3.8.1.303</MonoGameUwpVersion>
     <NetCoreUwpVersion>6.2.11</NetCoreUwpVersion>
     <SharpDXMathVersion>4.0.1</SharpDXMathVersion>
     <SharpZipLibVersion>1.3.3</SharpZipLibVersion>

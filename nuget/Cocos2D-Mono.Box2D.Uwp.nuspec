@@ -20,8 +20,8 @@
     <tags>mono monogame cocos2d game uwp xbox windows-universal physics box2d</tags>
     <dependencies>
       <dependency id="Microsoft.NETCore.UniversalWindowsPlatform" version="6.2.11" />
-      <dependency id="MonoGame.Framework.WindowsUniversal" version="3.8.2.1105" />
-      <dependency id="MonoGame.Content.Builder.Task" version="3.8.2.1105" />
+      <dependency id="MonoGame.Framework.WindowsUniversal" version="3.8.1.303" />
+      <dependency id="MonoGame.Content.Builder.Task" version="3.8.1.303" />
     </dependencies>
   </metadata>
   <files>

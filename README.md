@@ -12,7 +12,7 @@ This repo is the **source of truth for `Cocos2D-Mono.Uwp` on NuGet** (continuing
 
 | Dependency | Version | Rationale |
 |---|---|---|
-| `MonoGame.Framework.WindowsUniversal` | `3.8.2.1105` | Last MonoGame release with UWP support. |
+| `MonoGame.Framework.WindowsUniversal` | `3.8.1.303` | Last MonoGame UWP package published to nuget.org. (Mainline nuspecs reference `3.8.2.1105` but that version was never published.) |
 | `Microsoft.NETCore.UniversalWindowsPlatform` | `6.2.11` | Last stable UWP runtime. |
 | `SharpDX.Mathematics` | `4.0.1` | UWP-compatible. |
 | `SharpZipLib` | `1.3.3` | Last UWP-compatible version. |
@@ -74,7 +74,7 @@ The csprojs use pre-SDK MSBuild format because UWP class libraries require `Targ
 | Concern | This repo | Mainline cocos2d-mono |
 |---|---|---|
 | Target frameworks | `uap10.0` | `net9.0` / `net9.0-windows7.0` / `net9.0-android35.0` / `net9.0-ios18.0` (`net10.0*` on `release/2.6.0-preview`) |
-| MonoGame | 3.8.2.1105 (WindowsUniversal) | 3.8.4.1 (DesktopGL/WindowsDX/Android/iOS), 3.8.5-preview on preview |
+| MonoGame | 3.8.1.303 (WindowsUniversal) | 3.8.4.1 (DesktopGL/WindowsDX/Android/iOS), 3.8.5-preview on preview |
 | `#if NETFX_CORE` blocks in shared source | Retained (consumed from pinned submodule) | Slated for deletion in Phase 2 |
 | Active modernization | None — frozen-archive maintenance | Phases 2–6 of [MODERNIZATION.md](https://github.com/Cocos2D-Mono/cocos2d-mono/blob/dev/MODERNIZATION.md) |
 

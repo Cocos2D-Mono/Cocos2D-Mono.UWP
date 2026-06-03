@@ -21,7 +21,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) 
 
 | Dependency | Version |
 |---|---|
-| `MonoGame.Framework.WindowsUniversal` | 3.8.2.1105 |
+| `MonoGame.Framework.WindowsUniversal` | 3.8.1.303 |
 | `Microsoft.NETCore.UniversalWindowsPlatform` | 6.2.11 |
 | `SharpDX.Mathematics` | 4.0.1 |
 | `SharpZipLib` | 1.3.3 |
