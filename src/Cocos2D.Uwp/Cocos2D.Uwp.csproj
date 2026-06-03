@@ -25,7 +25,13 @@
     <AssemblyName>Cocos2D</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.20348.0</TargetPlatformVersion>
+    <!-- Lowered from 10.0.20348.0 (historical mainline value) to 10.0.19041.0
+         because the GitHub Actions windows-2022 image's VS 2022 Universal
+         workload installs the UAP platform extension for 10.0.19041 but not
+         10.0.20348. UAP.props for 10.0.20348 is missing on the runner ->
+         error APPX3217. 10.0.19041 is Win10 20H1, well past our
+         TargetPlatformMinVersion of 10.0.16299. -->
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.19041.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
